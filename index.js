@@ -1,6 +1,6 @@
 const http = require("http");
-const handleGet = require("./methods/handleGet");
-const handlePost = require("./methods/handlePost");
+const handleGet = require("./routes/getRoutes");
+const handlePost = require("./routes/postRoutes");
 let data = require("./data/data.json");
 
 const server = http.createServer((req, res) => {
@@ -17,8 +17,6 @@ const server = http.createServer((req, res) => {
       res.end();
       break;
   }
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Hello World!");
 });
 
 server.listen(3000, () => {
