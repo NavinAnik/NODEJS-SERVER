@@ -3,7 +3,7 @@ const bodyParser = require("../utils/bodyParser");
 module.exports = async function postRoutes(req, res) {
   if (req.url === "/api/employees/create") {
     console.log("inside post");
-    res.setHeader("Content-Type", "application/json");
+    res.setHeader("Content-Type", "text/html");
     const body = await bodyParser(req);
     if (
       body.name !== "" &&
@@ -15,7 +15,7 @@ module.exports = async function postRoutes(req, res) {
     ) {
       try {
         console.log("inside try");
-        await postController(res.body);
+        await postController(req, body);
         res.statusCode = 201;
         res.write("Employee created successfully");
         res.end();
