@@ -1,7 +1,7 @@
 const http = require("http");
 const handleGet = require("./routes/getRoutes");
 const handlePost = require("./routes/postRoutes");
-let data = require("./data/data.json");
+let data = require("./dataModel/data.json");
 
 const server = http.createServer((req, res) => {
   req.data = data;

@@ -2,7 +2,7 @@ const fs = require("fs");
 
 module.exports = async function getController(id) {
   const content = await fs.promises
-    .readFile("./data/data.json", "utf8")
+    .readFile("./dataModel/data.json", "utf8")
     .catch((err) => {
       console.log("File not found");
     });
